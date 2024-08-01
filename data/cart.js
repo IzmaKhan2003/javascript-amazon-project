@@ -64,3 +64,17 @@ export function calculateCartQuantity(){
      });
     return cartQuantity;
 }
+
+export function updateDeliveryOption(productId, deliveryOptionId ){
+    let matchingcartItem;
+        cart.forEach((cartItem) => {
+            if (productId === cartItem.productId){
+                matchingcartItem = cartItem;
+
+                }
+        });
+
+    matchingcartItem.deliveryOptionId = deliveryOptionId;
+
+    saveToStorage();
+}
